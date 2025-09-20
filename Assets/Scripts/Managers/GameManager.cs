@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,7 @@ public class GameManager : MonoBehaviour
     private int brainsEaten = 0;
     private bool gameOver = false;
 
+    public static Action OnGameLost;
     private void Awake()
     {
         if (Instance == null) Instance = this;
@@ -64,6 +66,6 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         Debug.Log("You Lose!");
-        // Add lose screen
+        OnGameLost?.Invoke();
     }
 }

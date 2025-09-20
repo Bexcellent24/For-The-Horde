@@ -22,6 +22,11 @@ public class Health : MonoBehaviour
     private void Die()
     {
         onDeath?.Invoke();
+
+        if (CompareTag("Player"))
+        {
+            GameManager.Instance.LoseGame();
+        }
         Destroy(gameObject);
     }
 

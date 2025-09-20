@@ -31,19 +31,33 @@ public class PGManager : MonoBehaviour
         {
             navMeshSurface.BuildNavMesh();
             
+            float maxAttempts = 50;
+            float radius = playerNavSampleRadius; // how far from original start position to search
+            float maxHeightDiff = 3f;
+            bool found = false;
+
             Vector3 startPos = player.position;
 
-            if (NavMesh.SamplePosition(startPos, out NavMeshHit hit, playerNavSampleRadius, NavMesh.AllAreas))
+            for (int i = 0; i < maxAttempts; i++)
             {
-                if (Mathf.Abs(hit.position.y - startPos.y) <= 3)
+                // Random offset within radius
+                Vector2 offset2D = Random.insideUnitCircle * radius;
+                Vector3 candidate = startPos + new Vector3(offset2D.x, 0f, offset2D.y);
+
+                if (NavMesh.SamplePosition(candidate, out NavMeshHit hit, 1f, NavMesh.AllAreas))
                 {
-                    player.position = hit.position + Vector3.up * .5f;
-                }
-                else
-                {
-                    Debug.LogWarning("No valid NavMesh at the correct height near the player's start position.");
+                    if (Mathf.Abs(hit.position.y - startPos.y) <= maxHeightDiff)
+                    {
+                        player.position = hit.position + Vector3.up * 0.5f;
+                        found = true;
+                        break;
+                    }
                 }
             }
+
+            if (!found)
+                Debug.LogWarning("Failed to find a valid NavMesh position for the player near the start.");
+
 
             StartCoroutine(SpawnEnemiesNextFrame());
             StartCoroutine(EnableAgentsNextFrame());
