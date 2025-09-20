@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
     [Header("Menus")]
     [SerializeField] private GameObject gameOverMenu;
     [SerializeField] private TMP_Text gameOverText;
+    [SerializeField] private GameObject pauseMenu;
 
     [Header("Animation Settings")]
     [SerializeField] private float zoomDuration = 1f; // how long it takes to zoom
@@ -22,6 +23,14 @@ public class UIManager : MonoBehaviour
     private void OnDisable()
     {
         GameManager.OnGameLost -= GameLostHandler;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame();
+        }
     }
 
     private void GameLostHandler()
@@ -55,6 +64,28 @@ public class UIManager : MonoBehaviour
 
         // Wait a bit before switching to main menu
         yield return new WaitForSeconds(delayBeforeMenu);
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    private void PauseGame()
+    {
+        Time.timeScale = 0f;
+        pauseMenu.SetActive(true);
+    }
+    public void ResumeGame()
+    {
+        Time.timeScale = 1f;
+        pauseMenu.SetActive(false);
+    }
+
+    public void MainMenu()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }

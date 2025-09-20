@@ -44,7 +44,7 @@ public class PGManager : MonoBehaviour
                 Vector2 offset2D = Random.insideUnitCircle * radius;
                 Vector3 candidate = startPos + new Vector3(offset2D.x, 0f, offset2D.y);
 
-                if (NavMesh.SamplePosition(candidate, out NavMeshHit hit, 1f, NavMesh.AllAreas))
+                if (NavMesh.SamplePosition(candidate, out NavMeshHit hit, 5f, NavMesh.AllAreas))
                 {
                     if (Mathf.Abs(hit.position.y - startPos.y) <= maxHeightDiff)
                     {
