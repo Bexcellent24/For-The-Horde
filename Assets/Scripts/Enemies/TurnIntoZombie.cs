@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Civilian : MonoBehaviour
+public class TurnIntoZombie : MonoBehaviour
 {
     [SerializeField] private float turnRadius = 2f;
 
@@ -18,13 +18,13 @@ public class Civilian : MonoBehaviour
         {
             if (hit.CompareTag("Player") || hit.CompareTag("Zombie"))
             {
-                TurnIntoZombie();
+                Turn();
                 break;
             }
         }
     }
 
-    private void TurnIntoZombie()
+    private void Turn()
     {
         Vector3 pos = transform.position;
         HordeManager.Instance.AddZombie(pos);

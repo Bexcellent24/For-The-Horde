@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0afb184b07fac4abb14ca47bb66969, type: 3}
+  m_Name: Assaulter
+  m_EditorClassIdentifier: 
+  enemyName: Assaulter
+  maxHealth: 1
+  moveSpeed: 3.5
+  attackRange: 10
+  fireRate: 0.75
+  bulletPrefab: {fileID: 5730590136145098886, guid: 75a9f63876e85564692ad77fe0627df3, type: 3}
+  bulletDamage: 1
+  bulletSpeed: 10
+  viewRadius: 10
+  viewAngle: 120
+  hearingRadius: 20

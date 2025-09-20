@@ -19,7 +19,6 @@ public class ZombieController : MonoBehaviour
             Debug.DrawRay(ray.origin, ray.direction * 100f, Color.red, 2f); // visual ray in Scene view
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
-                Debug.Log("Destination: " + hit.point + " Hit: " + hit.collider.name);
                 agent.SetDestination(hit.point);
                 
                 if (clickMarkerPrefab != null)
