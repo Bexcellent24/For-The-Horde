@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7027282203502932706}
   - component: {fileID: 304193195870725669}
   - component: {fileID: 6405092349800397842}
+  - component: {fileID: 6313626868947141508}
   m_Layer: 0
   m_Name: L-Shape
   m_TagString: Untagged
@@ -87,6 +88,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6313626868947141508
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 239369954195041766}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -1796880755625823492, guid: 7ca44dcb80600594298a29cb250befb4, type: 3}
 --- !u!1 &7707686825448736462
 GameObject:
   m_ObjectHideFlags: 0

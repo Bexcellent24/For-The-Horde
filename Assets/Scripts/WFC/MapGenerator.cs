@@ -12,21 +12,21 @@ public class MapGenerator : MonoBehaviour
     [Tooltip("Height of the tower in cells.")]
     [SerializeField] private int sizeX = 5;
     [SerializeField] private int sizeZ = 5;
-    public float tileSize = 2f;
-    public Transform parent;
-
+    [SerializeField] private float tileSize = 2f;
+    [SerializeField] private Transform parent;
+    
     [Header("Tiles")]
     public List<WFCTile> allTiles;
-
     #endregion
 
     #region Private Fields
 
     private Cell[,,] grid;
     private GameObject[,,] instantiatedTiles;
-
     
     private const int height = 1;
+    
+    public Action OnMapGenerated;
 
     #endregion
 
@@ -49,11 +49,7 @@ public class MapGenerator : MonoBehaviour
     #endregion
 
     #region Public API
-
-    void Start()
-    {
-        Generate();
-    }
+    
     
     // the placer calls this when its time to do the deed
     public void Generate()
@@ -115,7 +111,9 @@ public class MapGenerator : MonoBehaviour
             if (candidates.Count == 0)
             {
                 InstantiateResult();
+                OnMapGenerated?.Invoke();
                 yield break;
+                
             }
 
             // Collapse random candidate

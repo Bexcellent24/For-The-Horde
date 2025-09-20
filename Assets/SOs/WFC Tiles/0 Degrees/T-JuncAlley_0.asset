@@ -15,7 +15,7 @@ MonoBehaviour:
   prefab: {fileID: 4847909540710412176, guid: d9c54164a61bae940b4fc71d634a2e8d, type: 3}
   topSocket: 0
   bottomSocket: 0
-  northSocket: 1
+  northSocket: 0
   eastSocket: 1
-  southSocket: 0
+  southSocket: 1
   westSocket: 1

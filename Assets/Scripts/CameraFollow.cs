@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, desiredPos, Time.deltaTime * followSpeed);
 
         // Keep fixed rotation (looking downwards)
-        transform.rotation = Quaternion.Euler(60f, 0f, 0f);
+        transform.rotation = Quaternion.Euler(70f, 0f, 0f);
 
         // Zoom in/out with scroll wheel
         float scroll = Input.GetAxis("Mouse ScrollWheel");
