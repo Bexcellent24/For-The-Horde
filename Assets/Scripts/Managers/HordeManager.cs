@@ -26,7 +26,7 @@ public class HordeManager : MonoBehaviour
         Debug.Log("Zombie added! Horde size = " + horde.Count);
     }
 
-    public void RemoveZombie(Zombie zombie)
+    public void RemoveFromHorde(Zombie zombie)
     {
         if (horde.Contains(zombie))
         {

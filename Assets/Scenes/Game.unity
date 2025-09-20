@@ -910,6 +910,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451647627}
   m_CullTransparentMesh: 1
+--- !u!1 &758158539 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5581442090805789680, guid: f6b62ac981685784ea18358b4830af81, type: 3}
+  m_PrefabInstance: {fileID: 4331914641656414022}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &758158545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758158539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9fcdb772fb159f46b8a5280e51727a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  redirectDamageWhenHordeExists: 1
+  showRedirectionEffects: 1
 --- !u!1 &775350712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1568,16 +1587,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyQuotas:
   - prefab: {fileID: 1033438480213322565, guid: 850a861795b9d814b900fb57e8e486e1, type: 3}
-    count: 40
+    count: 15
+  - prefab: {fileID: 1033438480213322565, guid: 45c8bd2cb0443bf45b2896013b133b17, type: 3}
+    count: 15
+  - prefab: {fileID: 1033438480213322565, guid: 1dad24c2adde2fa46a19b99720002e2e, type: 3}
+    count: 15
   - prefab: {fileID: 5465797334493863516, guid: 04bed213fbf79ca4092df8f6db30e6ca, type: 3}
     count: 20
   - prefab: {fileID: 3883577017006405055, guid: 5ddabcd296289894287cd1a8bae6a258, type: 3}
     count: 10
   - prefab: {fileID: 5004091250143003453, guid: b455480e8300c324d961995ec1b607fe, type: 3}
     count: 5
-  spawnRadius: 3
+  spawnRadius: 20
   maxHeightDifference: 10
-  minSeparation: 1
+  minSeparation: 2
   minPlayerDistance: 40
   playerPos: {fileID: 326389896}
   spawnPoints: []
@@ -2922,6 +2945,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2081981387837421758, guid: f6b62ac981685784ea18358b4830af81, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 150
+      objectReference: {fileID: 0}
     - target: {fileID: 5250558742225693001, guid: f6b62ac981685784ea18358b4830af81, type: 3}
       propertyPath: m_LocalPosition.x
       value: 73
@@ -2969,7 +2996,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5581442090805789680, guid: f6b62ac981685784ea18358b4830af81, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 758158545}
   m_SourcePrefab: {fileID: 100100000, guid: f6b62ac981685784ea18358b4830af81, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
