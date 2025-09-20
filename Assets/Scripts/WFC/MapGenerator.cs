@@ -128,7 +128,7 @@ public class MapGenerator : MonoBehaviour
 
             // Instantiate immediately
             InstantiateTile(chosenPos, pickedTile);
-            yield return new WaitForSeconds(0.1f); 
+            yield return new WaitForSeconds(0.01f); 
 
             // Propagation
             while (propagationQueue.Count > 0)
