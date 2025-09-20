@@ -62,6 +62,8 @@ GameObject:
   - component: {fileID: 6176951678763757432}
   - component: {fileID: 1209489811272031496}
   - component: {fileID: 3507780472437749276}
+  - component: {fileID: 713746775358967821}
+  - component: {fileID: 1245174207261528797}
   m_Layer: 0
   m_Name: 'Civilian '
   m_TagString: 'Civilian '
@@ -227,3 +229,34 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1
+  _currentTarget: {fileID: 0}
+--- !u!114 &713746775358967821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033438480213322565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8074fa87e21b799448c9e838796cea11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 5
+  wanderWaitTime: 3
+  wanderMinDistance: 1
+  maxHeightDifference: 2
+--- !u!114 &1245174207261528797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033438480213322565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e947204907cba0847979a93c326692f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fleeRadius: 20
+  stopDistance: 0.1

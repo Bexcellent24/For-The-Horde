@@ -81,11 +81,16 @@ public class Attacker : MonoBehaviour
     {
         if (_bullet == null || target == null) return;
 
-        // Rotate enemy to face target
+        // Rotate enemy to face target smoothly
         Vector3 direction = (target.position - transform.position).normalized;
         direction.y = 0f;
+
         if (direction != Vector3.zero)
-            transform.rotation = Quaternion.LookRotation(direction);
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            float rotateSpeed = 2f; // adjust for smoothness
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * rotateSpeed);
+        }
 
         // Spawn bullet
         Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position;

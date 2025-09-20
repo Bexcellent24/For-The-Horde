@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,6 +9,11 @@ public class PGManager : MonoBehaviour
     [Header("References")]
     public MapGenerator mapGenerator;
     public NavMeshSurface navMeshSurface;
+    public EnemySpawner enemySpawner;
+    
+    [Header("Player")]
+    public Transform player;
+    public float playerNavSampleRadius = 2f;
 
     void Start()
     {
@@ -24,13 +30,43 @@ public class PGManager : MonoBehaviour
         if (navMeshSurface != null)
         {
             navMeshSurface.BuildNavMesh();
+            
+            Vector3 startPos = player.position;
+
+            if (NavMesh.SamplePosition(startPos, out NavMeshHit hit, playerNavSampleRadius, NavMesh.AllAreas))
+            {
+                if (Mathf.Abs(hit.position.y - startPos.y) <= 3)
+                {
+                    player.position = hit.position + Vector3.up * .5f;
+                }
+                else
+                {
+                    Debug.LogWarning("No valid NavMesh at the correct height near the player's start position.");
+                }
+            }
+
+            StartCoroutine(SpawnEnemiesNextFrame());
             StartCoroutine(EnableAgentsNextFrame());
+            
         }
+    }
+    
+    private IEnumerator SpawnEnemiesNextFrame()
+    {
+        yield return null;
+        
+        EnemySpawnPoint[] spawnPoints = FindObjectsOfType<EnemySpawnPoint>();
+        List<Transform> spawnTransforms = new List<Transform>();
+        foreach (var sp in spawnPoints)
+            spawnTransforms.Add(sp.transform);
+        
+        enemySpawner.spawnPoints = spawnTransforms;
+        enemySpawner.SpawnEnemies();
     }
     
     private IEnumerator EnableAgentsNextFrame()
     {
-        yield return null; // wait one frame after baking
+        yield return null; 
 
         NavMeshAgent[] agents = FindObjectsOfType<NavMeshAgent>();
 

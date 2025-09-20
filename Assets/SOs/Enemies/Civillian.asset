@@ -21,5 +21,5 @@ MonoBehaviour:
   bulletDamage: 1
   bulletSpeed: 10
   viewRadius: 8
-  viewAngle: 120
+  viewAngle: 200
   hearingRadius: 20

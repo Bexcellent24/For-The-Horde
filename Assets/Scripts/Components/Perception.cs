@@ -15,7 +15,15 @@ public class Perception : MonoBehaviour
     [Header("Targeting")]
     public LayerMask targetLayer; // zombies/player
     public LayerMask obstacleLayer; // walls/objects blocking vision
-    public Transform currentTarget { get; private set; }
+    [SerializeField] 
+    private Transform _currentTarget;
+
+    public Transform currentTarget 
+    { 
+        get => _currentTarget; 
+        private set => _currentTarget = value; 
+    }
+
 
     public event Action<Transform> OnTargetAcquired;
 

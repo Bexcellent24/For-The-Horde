@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 3526154223561619366}
   - component: {fileID: 1891153339071861355}
   - component: {fileID: 2811154514340334906}
+  - component: {fileID: 4912394315288209145}
   m_Layer: 0
   m_Name: Enforcer
   m_TagString: 'Civilian '
@@ -203,15 +204,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346dc90adfcff44459d0c046a3924ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 120
-  hearingRadius: 10
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 1
+  _currentTarget: {fileID: 0}
+--- !u!114 &4912394315288209145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5465797334493863516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8074fa87e21b799448c9e838796cea11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderRadius: 5
+  wanderWaitTime: 3
+  wanderMinDistance: 1
+  maxHeightDifference: 2
 --- !u!1 &7231776982272076531
 GameObject:
   m_ObjectHideFlags: 0
