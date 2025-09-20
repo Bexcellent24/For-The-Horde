@@ -225,27 +225,21 @@ public class MapGenerator : MonoBehaviour
 
     private void InstantiateTile(Vector3Int pos, WFCTile tile)
     {
+        // Destroy existing tile if any
         if (instantiatedTiles[pos.x, pos.y, pos.z] != null)
             Destroy(instantiatedTiles[pos.x, pos.y, pos.z]);
-        
+
+        // Parent for the tile
         Transform p = parent != null ? parent : transform;
 
-        // centre the build
-        Vector3 half = new Vector3((sizeX - 1) * 0.5f, 0f, (sizeZ - 1) * 0.5f);
+        // Calculate position in world space
+        Vector3 worldPos = new Vector3(pos.x * tileSize, pos.y * tileSize, pos.z * tileSize);
 
-        // build the offset in LOCAL space
-        Vector3 localPos =
-            new Vector3((pos.x - half.x) * tileSize,
-                pos.y * tileSize,
-                (pos.z - half.z) * tileSize);
-
-        // convert to world using the parent’s rotation and position
-        Vector3 worldPos = p.TransformPoint(localPos);
-        Quaternion rot = p.rotation; 
-
-        instantiatedTiles[pos.x, pos.y, pos.z] =
-            Instantiate(tile.prefab, worldPos, rot, p);
+        // Instantiate tile at position with no rotation (or parent rotation if desired)
+        instantiatedTiles[pos.x, pos.y, pos.z] = 
+            Instantiate(tile.prefab, p.TransformPoint(worldPos), p.rotation, p);
     }
+
 
 
     #endregion

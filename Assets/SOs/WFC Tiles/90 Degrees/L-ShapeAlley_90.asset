@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfcd030242542b408e425afbfe38dad, type: 3}
+  m_Name: L-ShapeAlley_90
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1567831716417763158, guid: b44e750aa5abab5479c119dfb275c4dd, type: 3}
+  topSocket: 0
+  bottomSocket: 0
+  northSocket: 1
+  eastSocket: 0
+  southSocket: 0
+  westSocket: 1

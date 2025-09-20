@@ -7,8 +7,8 @@ public class WFCTile : ScriptableObject
     public GameObject prefab;
         
     [Header("Sockets per side")]
-    public SocketType topSocket;
-    public SocketType bottomSocket;
+    [HideInInspector] public SocketType topSocket;
+    [HideInInspector] public SocketType bottomSocket;
     public SocketType northSocket;
     public SocketType eastSocket;
     public SocketType southSocket;
