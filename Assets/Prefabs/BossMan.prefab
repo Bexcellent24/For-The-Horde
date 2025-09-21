@@ -150,7 +150,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 5004091250143003453}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 1.54
   m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ed0d8b11d177144aa66fec66871eb4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: ab090e9359d3db54abe626fe044ff261, type: 2}
+  data: {fileID: 11400000, guid: 1c3f403833a2e53438dd6432a574329c, type: 2}
 --- !u!114 &3311371893030695199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,7 +269,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d1f76be4294440a0e0307f62b42f0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d1f76be4294440a0e0307f62b42f0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -277,7 +277,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d1f76be4294440a0e0307f62b42f0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.26
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b69d1f76be4294440a0e0307f62b42f0, type: 3}
       propertyPath: m_LocalRotation.w

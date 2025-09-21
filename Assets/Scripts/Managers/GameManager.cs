@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Random = UnityEngine.Random;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,6 +17,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Game Settings")]
     [SerializeField] private float gameTime = 300f;
+    [SerializeField] private GameObject nukeEffectPrefab;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Camera mainCamera;
     
     [Header("Upgrade System")]
     [SerializeField] private int baseBrainsRequired = 5;
@@ -27,8 +32,10 @@ public class GameManager : MonoBehaviour
     private int currentBrainsRequired;
     private int upgradeLevel = 1;
     private bool gameOver = false;
+    private bool nukeTriggered = false;
 
     public static Action OnGameLost;
+    public static Action OnGameWon;
     public static Action OnUpgradeAvailable;
 
     private void Awake()
@@ -58,7 +65,7 @@ public class GameManager : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft <= 0)
         {
-            LoseGame();
+            StartCoroutine(NukesCoroutine());
         }
         UpdateUI();
     }
@@ -144,6 +151,7 @@ public class GameManager : MonoBehaviour
     {
         gameOver = true;
         Debug.Log("You Win!");
+        OnGameWon?.Invoke();
     }
 
     public void LoseGame()
@@ -151,6 +159,44 @@ public class GameManager : MonoBehaviour
         gameOver = true;
         Debug.Log("You Lose!");
         OnGameLost?.Invoke();
+    }
+
+    private IEnumerator NukesCoroutine()
+    {
+        if (nukeTriggered) yield break; // prevent multiple nukes
+        nukeTriggered = true;
+
+        yield return new WaitForSeconds(2);
+
+        if (nukeEffectPrefab != null && playerTransform != null)
+        {
+            // spawn once at player’s position and orientation
+            Instantiate(nukeEffectPrefab, playerTransform.position, Quaternion.identity);
+        }
+
+        if (mainCamera != null)
+        {
+            StartCoroutine(CameraShake(0.5f, 0.3f));
+        }
+
+        LoseGame();
+    }
+    private IEnumerator CameraShake(float duration, float magnitude)
+    {
+        Vector3 originalPos = mainCamera.transform.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * magnitude;
+            float y = Random.Range(-1f, 1f) * magnitude;
+            mainCamera.transform.localPosition = originalPos + new Vector3(x, y, 0f);
+
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        mainCamera.transform.localPosition = originalPos;
     }
 
     // Getters for other systems

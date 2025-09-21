@@ -3,6 +3,7 @@ using UnityEngine;
 public class TurnIntoZombie : MonoBehaviour
 {
     [SerializeField] private float turnRadius = 2f;
+    [SerializeField] private bool triggerEndGame = false;
 
     private void OnDrawGizmosSelected()
     {
@@ -29,6 +30,15 @@ public class TurnIntoZombie : MonoBehaviour
         Vector3 pos = transform.position;
         HordeManager.Instance.AddZombie(pos);
         GameManager.Instance.AddBrain();
-        Destroy(gameObject);
+
+        if (triggerEndGame)
+        {
+            GameManager.Instance.WinGame();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+      
     }
 }

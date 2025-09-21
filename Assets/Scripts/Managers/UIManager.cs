@@ -18,11 +18,13 @@ public class UIManager : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnGameLost += GameLostHandler;
+        GameManager.OnGameWon += GameWonHandler;
     }
 
     private void OnDisable()
     {
         GameManager.OnGameLost -= GameLostHandler;
+        GameManager.OnGameWon -= GameWonHandler;
     }
 
     private void Update()
@@ -37,6 +39,21 @@ public class UIManager : MonoBehaviour
     {
         gameOverMenu.SetActive(true);
 
+        gameOverText.text = "Game Over";
+        
+        // Reset text scale before animating
+        gameOverText.transform.localScale = Vector3.zero;
+
+        // Start the zoom animation
+        StartCoroutine(ZoomText());
+    }
+    
+    private void GameWonHandler()
+    {
+        gameOverMenu.SetActive(true);
+
+        gameOverText.text = "For The Horde!";
+        
         // Reset text scale before animating
         gameOverText.transform.localScale = Vector3.zero;
 

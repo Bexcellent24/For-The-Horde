@@ -14,6 +14,7 @@ public class EnemyData : ScriptableObject
     public GameObject bulletPrefab;
     public float bulletDamage = 20f;
     public float bulletSpeed = 10f;
+    
 
     [Header("Perception Stats")]
     public float viewRadius;

@@ -42,10 +42,7 @@ public class Health : MonoBehaviour
         // Apply damage normally for non-players or players without redirector
         ApplyDamage(amount);
     }
-
-    /// <summary>
-    /// Apply damage directly without any redirection (used internally and by redirector)
-    /// </summary>
+    
     public void ApplyDamage(float amount)
     {
         currentHealth -= amount;
@@ -61,7 +58,7 @@ public class Health : MonoBehaviour
     private void Die()
     {
         onDeath?.Invoke();
-
+        
         if (CompareTag("Player"))
         {
             GameManager.Instance.LoseGame();

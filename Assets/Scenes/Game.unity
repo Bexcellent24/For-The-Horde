@@ -1847,7 +1847,10 @@ MonoBehaviour:
   timerText: {fileID: 976865201}
   brainText: {fileID: 1591292751}
   brainProgressBar: {fileID: 770558357}
-  gameTime: 300
+  gameTime: 5
+  nukeEffectPrefab: {fileID: 4516618495783194877, guid: b54c6f7db7e55eb4f8f8ed13cb0d05fd, type: 3}
+  playerTransform: {fileID: 326389896}
+  mainCamera: {fileID: 330585545}
   baseBrainsRequired: 1
   brainsRequiredIncrease: 3
   maxBrainsRequired: 25
@@ -1922,6 +1925,8 @@ MonoBehaviour:
     count: 10
   - prefab: {fileID: 5004091250143003453, guid: b455480e8300c324d961995ec1b607fe, type: 3}
     count: 5
+  - prefab: {fileID: 5004091250143003453, guid: b3e0c39c757a4ba45908a1b963626920, type: 3}
+    count: 1
   spawnRadius: 20
   maxHeightDifference: 10
   minSeparation: 2
