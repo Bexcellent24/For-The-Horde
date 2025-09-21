@@ -152,7 +152,6 @@ public class GameManager : MonoBehaviour
     public void WinGame()
     {
         gameOver = true;
-        Debug.Log("You Win!");
         OnGameWon?.Invoke();
     }
 

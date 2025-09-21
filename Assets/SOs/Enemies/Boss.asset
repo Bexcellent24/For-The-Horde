@@ -17,10 +17,9 @@ MonoBehaviour:
   moveSpeed: 3
   attackRange: 30
   fireRate: 2
-  bulletPrefab: {fileID: 5730590136145098886, guid: 75a9f63876e85564692ad77fe0627df3, type: 3}
+  bulletPrefab: {fileID: 5730590136145098886, guid: 126b51eae7476b24e840460b89191ed4, type: 3}
   bulletDamage: 1
   bulletSpeed: 15
-  triggerEndGame: 1
   viewRadius: 30
   viewAngle: 200
   hearingRadius: 30

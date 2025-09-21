@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3ea9873d735e14d8b18e8fe4849e8d, type: 3}
   m_Name: Faster Horde
   m_EditorClassIdentifier: 
-  upgradeName: Faster Horde
-  description: The horde can run faster
+  upgradeName: Swift Horde
+  description: Zombies move faster
   upgradeType: 1
   value: 2
   intValue: 2

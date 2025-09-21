@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8835395823462840481
 Transform:
   m_ObjectHideFlags: 0
@@ -144,6 +144,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnRadius: 1.5
+  bloodSplatterPrefab: {fileID: 4356075618823161561, guid: 6e076d46b3eb5bf439bba5c63f1800f0, type: 3}
+  triggerEndGame: 0
 --- !u!114 &1209489811272031496
 MonoBehaviour:
   m_ObjectHideFlags: 0

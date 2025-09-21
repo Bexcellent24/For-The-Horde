@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3ea9873d735e14d8b18e8fe4849e8d, type: 3}
   m_Name: More Zombies
   m_EditorClassIdentifier: 
-  upgradeName: More Zombies
-  description: Adds +5 Zombies to the Horde.
+  upgradeName: Blind Spots
+  description: Enemies have reduced perception range
   upgradeType: 2
   value: 5
   intValue: 5

@@ -20,6 +20,9 @@ public class CivilianFlee : MonoBehaviour
     private float fleeTimer = 0f;
     private float originalSpeed;
     private bool isFleeing = false;
+    
+    private string[] deathSoundNames = { "Scream", "Scream 2", "Scream 3" };
+    private float deathSoundChance = 0.75f;
 
     void Awake()
     {
@@ -45,6 +48,12 @@ public class CivilianFlee : MonoBehaviour
         if (target != null && IsDangerous(target))
         {
             StartFleeing(target);
+            
+            if (Random.value < deathSoundChance && deathSoundNames != null && deathSoundNames.Length > 0)
+            {
+                string choice = deathSoundNames[Random.Range(0, deathSoundNames.Length)];
+                AudioManager.Instance?.PlaySFX(choice);
+            }
         }
     }
     

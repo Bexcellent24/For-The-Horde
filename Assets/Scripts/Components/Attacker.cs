@@ -266,6 +266,8 @@ public class Attacker : MonoBehaviour
     {
         if (_bullet == null || target == null) return;
 
+        AudioManager.Instance?.PlaySFX("Shoot");
+        
         // Spawn bullet
         Vector3 spawnPos = firePoint != null ? firePoint.position : transform.position + Vector3.up * 1f;
         GameObject b = Instantiate(_bullet, spawnPos, Quaternion.identity);

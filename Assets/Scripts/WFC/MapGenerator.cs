@@ -17,6 +17,12 @@ public class MapGenerator : MonoBehaviour
     
     [Header("Tiles")]
     public List<WFCTile> allTiles;
+    
+    [Header("Border Settings")]
+    [Tooltip("Tile to use for the border around the map")]
+    [SerializeField] private WFCTile emptyTile;
+    [Tooltip("Add border around the generated map")]
+    [SerializeField] private bool addBorder = true;
     #endregion
 
     #region Private Fields
@@ -111,6 +117,11 @@ public class MapGenerator : MonoBehaviour
             if (candidates.Count == 0)
             {
                 InstantiateResult();
+                
+                // Generate border after main generation is complete
+                if (addBorder && emptyTile != null)
+                    GenerateBorder();
+                
                 OnMapGenerated?.Invoke();
                 yield break;
                 
@@ -207,6 +218,35 @@ public class MapGenerator : MonoBehaviour
 
     #endregion
 
+    #region Border Generation
+
+    private void GenerateBorder()
+    {
+        Transform p = parent != null ? parent : transform;
+
+        // Generate border tiles around the perimeter
+        for (int x = -1; x <= sizeX; x++)
+        {
+            for (int z = -1; z <= sizeZ; z++)
+            {
+                // Skip the inner area (the already generated map)
+                if (x >= 0 && x < sizeX && z >= 0 && z < sizeZ)
+                    continue;
+
+                // Calculate world position for border tile
+                Vector3 worldPos = new Vector3(x * tileSize, 0, z * tileSize);
+                
+                // Instantiate border tile
+                GameObject borderTile = Instantiate(emptyTile.prefab, p.TransformPoint(worldPos), p.rotation, p);
+                
+                // Optional: Add a component or tag to identify border tiles
+                borderTile.name = $"BorderTile_({x},{z})";
+            }
+        }
+    }
+
+    #endregion
+
     #region Tile Instantiation
 
     private void InstantiateResult()
@@ -237,8 +277,6 @@ public class MapGenerator : MonoBehaviour
         instantiatedTiles[pos.x, pos.y, pos.z] = 
             Instantiate(tile.prefab, p.TransformPoint(worldPos), p.rotation, p);
     }
-
-
 
     #endregion
 

@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 6384736956740828994}
   - component: {fileID: 9169736825180086107}
   - component: {fileID: 5309482863192013925}
+  - component: {fileID: 994528542206810252}
   m_Layer: 0
   m_Name: BossMan
   m_TagString: 'Civilian '
@@ -247,6 +248,21 @@ MonoBehaviour:
   pauseWhenTargetAcquired: 1
   investigateLastKnownPosition: 1
   investigationTime: 3
+--- !u!114 &994528542206810252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5004091250143003453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c052b451fca10bc40a0617b25996a3fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  turnRadius: 3.49
+  bloodSplatterPrefab: {fileID: 4356075618823161561, guid: 6e076d46b3eb5bf439bba5c63f1800f0, type: 3}
+  triggerEndGame: 1
 --- !u!1001 &9101951600079525804
 PrefabInstance:
   m_ObjectHideFlags: 0

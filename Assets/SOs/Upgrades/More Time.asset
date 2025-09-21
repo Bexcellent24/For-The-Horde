@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3ea9873d735e14d8b18e8fe4849e8d, type: 3}
   m_Name: More Time
   m_EditorClassIdentifier: 
-  upgradeName: More Time
-  description: +15 seconds before the nuke drops
-  icon: {fileID: 21300000, guid: e5a15589781603144ba2f48de5f94b35, type: 3}
+  upgradeName: Delay the End
+  description: Adds 15 seconds before the nuke arrives
   upgradeType: 0
   value: 15
   intValue: 15

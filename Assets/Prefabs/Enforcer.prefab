@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnRadius: 1.5
+  bloodSplatterPrefab: {fileID: 4356075618823161561, guid: 6e076d46b3eb5bf439bba5c63f1800f0, type: 3}
+  triggerEndGame: 0
 --- !u!114 &9021600084627361730
 MonoBehaviour:
   m_ObjectHideFlags: 0
