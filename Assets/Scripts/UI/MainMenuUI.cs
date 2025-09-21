@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,7 +6,13 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private GameObject controlsMenu;
     [SerializeField] private GameObject MainMenu;
-    
+
+    private void Start()
+    {
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlayMusic("MainMenu");
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene("Game");

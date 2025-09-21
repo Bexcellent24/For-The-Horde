@@ -285,6 +285,7 @@ GameObject:
   - component: {fileID: 3476714712552335160}
   - component: {fileID: 4793843836484579193}
   - component: {fileID: 5190074263604904084}
+  - component: {fileID: 5237250990505889635}
   m_Layer: 5
   m_Name: ShopItem
   m_TagString: Untagged
@@ -410,3 +411,15 @@ MonoBehaviour:
   nameText: {fileID: 3733703895069436453}
   descriptionText: {fileID: 7591494549763701311}
   button: {fileID: 4793843836484579193}
+--- !u!114 &5237250990505889635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5186722731420135611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f13015129316c149b0217648a940113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

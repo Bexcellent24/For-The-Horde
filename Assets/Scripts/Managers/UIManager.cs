@@ -92,11 +92,13 @@ public class UIManager : MonoBehaviour
     private void PauseGame()
     {
         Time.timeScale = 0f;
+        AudioManager.Instance?.StopMusic();
         pauseMenu.SetActive(true);
     }
     public void ResumeGame()
     {
         Time.timeScale = 1f;
+        AudioManager.Instance?.PlayMusic("Background");
         pauseMenu.SetActive(false);
     }
 

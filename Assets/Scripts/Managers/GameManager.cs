@@ -56,6 +56,8 @@ public class GameManager : MonoBehaviour
         timeLeft = gameTime;
         currentBrainsRequired = baseBrainsRequired;
         UpdateUI();
+        
+        AudioManager.Instance?.PlayMusic("Background");
     }
 
     private void Update()
@@ -166,7 +168,10 @@ public class GameManager : MonoBehaviour
         if (nukeTriggered) yield break; // prevent multiple nukes
         nukeTriggered = true;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
+        AudioManager.Instance?.StopMusic();
+        AudioManager.Instance?.PlaySFX("Explotion");
+        yield return new WaitForSeconds(1);
 
         if (nukeEffectPrefab != null && playerTransform != null)
         {
