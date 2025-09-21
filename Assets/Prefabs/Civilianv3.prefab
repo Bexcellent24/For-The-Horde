@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3529161375771367444}
   m_Layer: 0
   m_Name: VisionCone
-  m_TagString: Untagged
+  m_TagString: Civilian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8bffc42a8de344dab5b047fec6e14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coneMaterial: {fileID: 2100000, guid: 7d118e32db511fb428147fb63ad3c65c, type: 2}
+  coneMaterial: {fileID: 2100000, guid: 337bfbf336065c148bb48556e2126a0a, type: 2}
   segments: 20
 --- !u!1 &1033438480213322565
 GameObject:
@@ -64,7 +64,7 @@ GameObject:
   - component: {fileID: 1245174207261528797}
   m_Layer: 0
   m_Name: Civilianv3
-  m_TagString: 'Civilian '
+  m_TagString: Civilian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,8 +79,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.153, y: 1.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8835395823462840481}
   - {fileID: 8842721208432172349}
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _viewRadius: 10
   _viewAngle: 120
-  _hearingRadius: 5
+  _hearingRadius: 10
   targetLossTime: 2
   targetSwitchDistance: 3
   targetLayer:
@@ -286,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 81d0cfd4daf5f1144b3239e73ee957de, type: 3}
       propertyPath: m_Name
       value: Hoomans3Mesh
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 81d0cfd4daf5f1144b3239e73ee957de, type: 3}
+      propertyPath: m_TagString
+      value: Civilian
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

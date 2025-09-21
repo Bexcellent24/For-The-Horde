@@ -28,8 +28,14 @@ public class Zombie : MonoBehaviour
     {
         followTarget = target;
 
-        // random offset in a circle
-        Vector2 randomCircle = Random.insideUnitCircle * followRadius;
-        offset = new Vector3(randomCircle.x, 0, randomCircle.y);
+        // Generate positions in an arc behind the player (180 degrees)
+        float randomAngle = Random.Range(90f, 270f); // 90° to 270° = behind the player
+        float randomDistance = Random.Range(0.5f, followRadius);
+    
+        float radians = randomAngle * Mathf.Deg2Rad;
+        float x = Mathf.Cos(radians) * randomDistance;
+        float z = Mathf.Sin(radians) * randomDistance;
+    
+        offset = new Vector3(x, 0, z);
     }
 }

@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Gunslider
   maxHealth: 1
-  moveSpeed: 5
+  moveSpeed: 4
   attackRange: 20
-  fireRate: 1.5
+  fireRate: 2
   bulletPrefab: {fileID: 5730590136145098886, guid: 75a9f63876e85564692ad77fe0627df3, type: 3}
   bulletDamage: 1
   bulletSpeed: 10
   viewRadius: 15
-  viewAngle: 200
+  viewAngle: 100
   hearingRadius: 50

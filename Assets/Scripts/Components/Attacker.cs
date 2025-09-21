@@ -20,8 +20,14 @@ public class Attacker : MonoBehaviour
     public Transform firePoint;
 
     private Perception perception;
-    private Transform lockedTarget; // Target we're committed to attacking
+    private Transform lockedTarget; 
+    private Animator anim;
 
+    void Awake()
+    {
+        anim = GetComponentInChildren<Animator>();
+    }
+    
     public void Init(float fireRate, float attackRange, GameObject bulletPrefab, float bulletSpeed, float bulletDamage)
     {
         _fireRate = fireRate;
@@ -279,6 +285,11 @@ public class Attacker : MonoBehaviour
         if (bullet != null)
         {
             bullet.SetTarget(target, _bulletSpeed, _bulletDamage);
+        }
+        
+        if (anim != null)
+        {
+            anim.SetTrigger("Shoot");
         }
 
         // Notify nearby enemies of the gunshot sound with higher intensity

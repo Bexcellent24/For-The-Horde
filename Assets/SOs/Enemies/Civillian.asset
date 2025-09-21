@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: Civillian
   maxHealth: 1
-  moveSpeed: 6
+  moveSpeed: 5
   attackRange: 15
   fireRate: 1.5
   bulletPrefab: {fileID: 5730590136145098886, guid: 75a9f63876e85564692ad77fe0627df3, type: 3}

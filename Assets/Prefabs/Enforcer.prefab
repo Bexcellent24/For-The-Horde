@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4912394315288209145}
   m_Layer: 0
   m_Name: Enforcer
-  m_TagString: 'Civilian '
+  m_TagString: Civilian
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,8 +36,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 34.78, y: 1.82, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7256067930562122465}
   - {fileID: 1770783013067197114}
@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c1721f1107eb24b942d8a1d863b106, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationSpeed: 3
+  aimTolerance: 10
   firePoint: {fileID: 7256067930562122465}
 --- !u!114 &1891153339071861355
 MonoBehaviour:
@@ -192,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5caad3d638b06644fa294a05f433a1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!114 &2811154514340334906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +207,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 346dc90adfcff44459d0c046a3924ff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _viewRadius: 10
+  _viewAngle: 120
+  _hearingRadius: 5
+  targetLossTime: 2
+  targetSwitchDistance: 3
   targetLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -227,6 +235,9 @@ MonoBehaviour:
   wanderWaitTime: 3
   wanderMinDistance: 1
   maxHeightDifference: 2
+  pauseWhenTargetAcquired: 1
+  investigateLastKnownPosition: 1
+  investigationTime: 3
 --- !u!1 &7231776982272076531
 GameObject:
   m_ObjectHideFlags: 0
